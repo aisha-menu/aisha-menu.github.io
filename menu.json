@@ -1159,7 +1159,7 @@
       "id": "mojito",
       "cat": "drinks",
       "group": "soda",
-      "price": 2500,
+      "price": 3500,
       "image": "images/mojito.webp",
       "icon": "🥤",
       "name": {
@@ -1179,7 +1179,7 @@
       "id": "anor-fresh",
       "cat": "drinks",
       "group": "soda",
-      "price": 2500,
+      "price": 3500,
       "image": "images/anor-fresh.webp",
       "name": {
         "uz": "Anor fresh",
@@ -1198,7 +1198,7 @@
       "id": "flavis",
       "cat": "drinks",
       "group": "soda",
-      "price": 2500,
+      "price": 3500,
       "image": "images/flavis.webp",
       "name": {
         "uz": "Flavis",
@@ -1216,7 +1216,7 @@
     {
       "id": "cola",
       "cat": "drinks",
-      "price": 1200,
+      "price": 2200,
       "image": "images/cola.webp",
       "name": {
         "uz": "Kola 1,5 L",
@@ -1236,7 +1236,7 @@
       "id": "cola-can",
       "cat": "drinks",
       "group": "soda",
-      "price": 500,
+      "price": 1500,
       "image": "images/cola-can.webp",
       "name": {
         "uz": "Kola (banka)",
@@ -1255,7 +1255,7 @@
       "id": "cider",
       "cat": "drinks",
       "group": "soda",
-      "price": 500,
+      "price": 1500,
       "image": "images/cider.webp",
       "name": {
         "uz": "Chilsung Sayder (banka)",
@@ -1273,7 +1273,7 @@
     {
       "id": "yogurt",
       "cat": "extras",
-      "price": 1000,
+      "price": 2000,
       "image": "images/yogurt.webp",
       "name": {
         "uz": "Qatiq (yogurt)",
@@ -1327,7 +1327,7 @@
     {
       "id": "small-bread",
       "cat": "extras",
-      "price": 1000,
+      "price": 2000,
       "image": "images/small-bread.webp",
       "name": {
         "uz": "Non (kichik)",
