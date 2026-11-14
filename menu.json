@@ -159,7 +159,7 @@
       "id": "khazan-kebab-plov",
       "cat": "main",
       "group": "national",
-      "price": 13500,
+      "price": 15000,
       "image": "images/khazan-kebab-plov.webp",
       "name": {
         "uz": "Qozon kabob + osh",
@@ -176,16 +176,16 @@
       "featured": true
     },
     {
-      "id": "khazan-kebab-small",
+      "id": "khazan-kebab",
       "cat": "main",
       "group": "national",
-      "price": 12000,
+      "price": 14000,
       "image": "images/khazan-kebab.webp",
       "name": {
-        "uz": "Qozon kabob (kichik)",
-        "en": "Khazan kebab (small)",
-        "ko": "카잔 케밥-양고기 (소)",
-        "ru": "Казан-кебаб (малый)"
+        "uz": "Qozon kebab",
+        "en": "Khazan kebab",
+        "ko": "카잔 케밥-양고기",
+        "ru": "Казан-кебаб"
       },
       "desc": {
         "uz": "Qozonda qovurilgan yumshoq qo'y go'shti, kartoshka fri va salat bilan.",
@@ -196,35 +196,16 @@
       "featured": true
     },
     {
-      "id": "khazan-kebab-large",
+      "id": "achchiq-gosht",
       "cat": "main",
       "group": "national",
       "price": 14000,
-      "image": "images/khazan-kebab.webp",
-      "name": {
-        "uz": "Qozon kabob (katta)",
-        "en": "Khazan kebab (large)",
-        "ko": "카잔 케밥-양고기 (대)",
-        "ru": "Казан-кебаб (большой)"
-      },
-      "desc": {
-        "uz": "Katta porsiya: qozonda qovurilgan qo'y go'shti, fri va salat bilan.",
-        "en": "Large portion of kazan-roasted lamb with fries and salad.",
-        "ko": "카잔에서 구운 양고기 큰 사이즈, 감자튀김과 샐러드 곁들임.",
-        "ru": "Большая порция баранины из казана с картофелем фри и салатом."
-      }
-    },
-    {
-      "id": "beef-stroganoff-small",
-      "cat": "main",
-      "group": "national",
-      "price": 12000,
       "image": "images/beef-stroganoff.webp",
       "name": {
-        "uz": "Achchiq go'sht (kichik)",
-        "en": "Achchiq go'sht — spicy beef (small)",
-        "ko": "쇠고기 스트로가노프 (소)",
-        "ru": "Аччик гушт — острая говядина (малый)"
+        "uz": "Achchiq go'sht",
+        "en": "Achchiq go'sht — spicy beef",
+        "ko": "쇠고기 스트로가노프",
+        "ru": "Аччик гушт — острая говядина"
       },
       "desc": {
         "uz": "Achchiq ziravorlar bilan qovurilgan mol go'shti bo'laklari, kartoshka fri va salat bilan.",
@@ -234,29 +215,10 @@
       }
     },
     {
-      "id": "beef-stroganoff-large",
-      "cat": "main",
-      "group": "national",
-      "price": 14000,
-      "image": "images/beef-stroganoff.webp",
-      "name": {
-        "uz": "Achchiq go'sht (katta)",
-        "en": "Achchiq go'sht — spicy beef (large)",
-        "ko": "쇠고기 스트로가노프 (대)",
-        "ru": "Аччик гушт — острая говядина (большой)"
-      },
-      "desc": {
-        "uz": "Katta porsiya: Achchiq ziravorlar bilan qovurilgan mol go'shti bo'laklari, kartoshka fri va salat bilan.",
-        "en": "Large portion: Spicy pan-fried beef chunks served with fries and salad.",
-        "ko": "큰 사이즈: 매콤하게 볶은 소고기, 감자튀김과 샐러드 곁들임.",
-        "ru": "Большая порция: Острая обжаренная говядина кусочками с картофелем фри и салатом."
-      }
-    },
-    {
       "id": "achchiq-gosht-fri",
       "cat": "main",
       "group": "national",
-      "price": 13000,
+      "price": 14000,
       "image": "images/achchiq-gosht-fri.webp",
       "name": {
         "uz": "Achchiq go'sht fri ustida",
@@ -332,7 +294,7 @@
       "id": "minced-baked-meat",
       "cat": "main",
       "group": "national",
-      "price": 11000,
+      "price": 13000,
       "image": "images/minced-baked-meat.webp",
       "name": {
         "uz": "Kotlet (1 porsiya)",
@@ -370,7 +332,7 @@
       "id": "kotlet",
       "cat": "main",
       "group": "national",
-      "price": 4500,
+      "price": 5000,
       "image": "images/kotlet.webp",
       "name": {
         "uz": "Kotlet",
@@ -411,7 +373,7 @@
       "price": 12000,
       "image": "images/honim.webp",
       "name": {
-        "uz": "Xonim (o'rama)",
+        "uz": "Xonim",
         "en": "Honim (steamed roll)",
         "ko": "호님 (찐 롤)",
         "ru": "Ханум (рулет)"
@@ -541,7 +503,7 @@
       "id": "lamb-kebab",
       "cat": "main",
       "group": "kebab",
-      "price": 7500,
+      "price": 8000,
       "image": "images/lamb-kebab.webp",
       "name": {
         "uz": "Qo'y go'shti kabob",
@@ -614,22 +576,22 @@
       }
     },
     {
-      "id": "somsa",
+      "id": "six-somsa",
       "cat": "main",
       "group": "fastfood",
-      "price": 4000,
+      "price": 4500,
       "image": "images/somsa.webp",
       "name": {
-        "uz": "Somsa",
-        "en": "Somsa",
-        "ko": "사무사",
-        "ru": "Самса"
+        "uz": "Six somsa",
+        "en": "Skewer somsa",
+        "ko": "꼬치 사무사",
+        "ru": "Самса на шампуре"
       },
       "desc": {
-        "uz": "Qatlama xamirdan, go'sht va piyoz to'ldirilgan tandir somsa.",
-        "en": "Flaky pastry filled with meat and onion, baked golden.",
-        "ko": "고기와 양파를 넣어 구운 겹겹이 바삭한 페이스트리.",
-        "ru": "Слоёная самса с мясом и луком, запечённая до золотистой корочки."
+        "uz": "Qatlama xamirdan, go'sht va piyoz to'ldirilgan, sixda pishirilgan somsa.",
+        "en": "Flaky pastry filled with meat and onion, baked on a skewer.",
+        "ko": "고기와 양파를 넣어 꼬치에 구운 겹겹 반죽 사무사.",
+        "ru": "Слоёная самса с мясом и луком, запечённая на шампуре."
       }
     },
     {
@@ -1099,6 +1061,36 @@
       }
     },
     {
+      "id": "pinchuza",
+      "cat": "salads",
+      "price": 4000,
+      "name": {
+        "uz": "Pinchuza",
+        "en": "Pinchuza",
+        "ko": "핀추자",
+        "ru": "Пинчуза"
+      }
+    },
+    {
+      "id": "tea",
+      "cat": "drinks",
+      "group": "hot",
+      "price": 1000,
+      "icon": "🍵",
+      "name": {
+        "uz": "Choy",
+        "en": "Tea",
+        "ko": "차",
+        "ru": "Чай"
+      },
+      "desc": {
+        "uz": "Issiq ko'k yoki qora choy.",
+        "en": "Hot green or black tea.",
+        "ko": "따뜻한 녹차 또는 홍차.",
+        "ru": "Горячий зелёный или чёрный чай."
+      }
+    },
+    {
       "id": "lemon-tea",
       "cat": "drinks",
       "price": 3000,
@@ -1135,6 +1127,25 @@
         "ru": "Горячий чай с молоком и пряностями."
       },
       "group": "hot"
+    },
+    {
+      "id": "fruit-tea",
+      "cat": "drinks",
+      "group": "hot",
+      "price": 4000,
+      "icon": "🍹",
+      "name": {
+        "uz": "Mevali choy",
+        "en": "Fruit tea",
+        "ko": "과일차",
+        "ru": "Фруктовый чай"
+      },
+      "desc": {
+        "uz": "Mevalar qo'shilgan issiq choy.",
+        "en": "Hot tea with fruit.",
+        "ko": "과일을 넣은 따뜻한 차.",
+        "ru": "Горячий чай с фруктами."
+      }
     },
     {
       "id": "dena-juice",
@@ -1270,6 +1281,24 @@
       }
     },
     {
+      "id": "suzma",
+      "cat": "extras",
+      "price": 4000,
+      "icon": "🥣",
+      "name": {
+        "uz": "Suzma",
+        "en": "Suzma (strained yogurt)",
+        "ko": "수즈마 (농축 요거트)",
+        "ru": "Сузьма"
+      },
+      "desc": {
+        "uz": "Quyuq suzilgan qatiq.",
+        "en": "Thick strained yogurt.",
+        "ko": "걸쭉하게 거른 요거트.",
+        "ru": "Густой процеженный кисломолочный продукт."
+      }
+    },
+    {
       "id": "french-fries",
       "cat": "extras",
       "price": 4000,
@@ -1361,6 +1390,18 @@
         "ru": "1 кг риса лазер на большом блюде, на 8–10 человек. Баранина, жёлтая морковь, перепелиные яйца."
       },
       "ready": 120
+    },
+    {
+      "id": "ice-cream",
+      "cat": "desserts",
+      "price": 3000,
+      "icon": "🍨",
+      "name": {
+        "uz": "Muzqaymoq (Ice Cream)",
+        "en": "Ice cream",
+        "ko": "아이스크림",
+        "ru": "Мороженое"
+      }
     }
   ],
   "credits": [
