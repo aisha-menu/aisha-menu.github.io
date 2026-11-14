@@ -139,7 +139,7 @@
       "id": "plov",
       "cat": "main",
       "group": "national",
-      "price": 10000,
+      "price": 12000,
       "image": "images/plov.webp",
       "name": {
         "uz": "Osh (palov)",
@@ -313,7 +313,7 @@
       "id": "chicken-leg",
       "cat": "main",
       "group": "national",
-      "price": 11000,
+      "price": 12000,
       "image": "images/chicken-leg.webp",
       "name": {
         "uz": "Tovuq oyoqchalari",
@@ -351,7 +351,7 @@
       "id": "brizol",
       "cat": "main",
       "group": "national",
-      "price": 11000,
+      "price": 13000,
       "image": "images/brizol.webp",
       "name": {
         "uz": "Brizol",
@@ -389,7 +389,7 @@
       "id": "manti",
       "cat": "main",
       "group": "national",
-      "price": 11000,
+      "price": 13000,
       "image": "images/manti.webp",
       "name": {
         "uz": "Manti",
@@ -408,7 +408,7 @@
       "id": "honim",
       "cat": "main",
       "group": "national",
-      "price": 10000,
+      "price": 12000,
       "image": "images/honim.webp",
       "name": {
         "uz": "Xonim (o'rama)",
@@ -427,7 +427,7 @@
       "id": "fried-noodles",
       "cat": "main",
       "group": "national",
-      "price": 11000,
+      "price": 12000,
       "image": "images/fried-noodles.webp",
       "name": {
         "uz": "Qovurma lag'mon",
@@ -446,7 +446,7 @@
       "id": "all-mix",
       "cat": "main",
       "group": "mix",
-      "price": 17500,
+      "price": 19500,
       "image": "images/all-mix.webp",
       "name": {
         "uz": "All Mix",
@@ -465,7 +465,7 @@
       "id": "all-mix-2",
       "cat": "main",
       "group": "mix",
-      "price": 17500,
+      "price": 19500,
       "image": "images/all-mix-2.webp",
       "name": {
         "uz": "All Mix 2",
@@ -484,7 +484,7 @@
       "id": "all-mix-kotlet",
       "cat": "main",
       "group": "mix",
-      "price": 17500,
+      "price": 19500,
       "image": "images/all-mix-kotlet.webp",
       "name": {
         "uz": "All Mix (kotlet)",
@@ -503,7 +503,7 @@
       "id": "all-mix-mantu",
       "cat": "main",
       "group": "mix",
-      "price": 17500,
+      "price": 19500,
       "image": "images/all-mix-mantu.webp",
       "name": {
         "uz": "All Mix (manti)",
@@ -522,7 +522,7 @@
       "id": "minced-beef-kebab",
       "cat": "main",
       "group": "kebab",
-      "price": 6500,
+      "price": 7000,
       "image": "images/minced-beef-kebab.webp",
       "name": {
         "uz": "Qiyma kabob (lyulya)",
@@ -617,7 +617,7 @@
       "id": "somsa",
       "cat": "main",
       "group": "fastfood",
-      "price": 3500,
+      "price": 4000,
       "image": "images/somsa.webp",
       "name": {
         "uz": "Somsa",
@@ -795,7 +795,7 @@
     {
       "id": "lagmon",
       "cat": "soups",
-      "price": 10000,
+      "price": 11000,
       "image": "images/lagmon.webp",
       "name": {
         "uz": "Lag'mon",
@@ -813,7 +813,7 @@
     {
       "id": "mastava",
       "cat": "soups",
-      "price": 9000,
+      "price": 10000,
       "image": "images/mastava.webp",
       "name": {
         "uz": "Mastava",
@@ -849,7 +849,7 @@
     {
       "id": "chuchvara",
       "cat": "soups",
-      "price": 10000,
+      "price": 11000,
       "image": "images/chuchvara.webp",
       "name": {
         "uz": "Chuchvara",
@@ -885,7 +885,7 @@
     {
       "id": "qaylali-manti",
       "cat": "soups",
-      "price": 11000,
+      "price": 13000,
       "image": "images/qaylali-manti.webp",
       "name": {
         "uz": "Qaylali manti (manti sho'rva)",
@@ -903,7 +903,7 @@
     {
       "id": "gulyash",
       "cat": "soups",
-      "price": 10000,
+      "price": 12000,
       "image": "images/gulyash.webp",
       "name": {
         "uz": "Amerikancha gulyash",
@@ -921,7 +921,7 @@
     {
       "id": "beef-say",
       "cat": "soups",
-      "price": 14000,
+      "price": 15000,
       "image": "images/beef-say.webp",
       "name": {
         "uz": "Say (mol go'shti)",
@@ -993,7 +993,7 @@
     {
       "id": "man-salad",
       "cat": "salads",
-      "price": 6000,
+      "price": 6500,
       "image": "images/man-salad.webp",
       "name": {
         "uz": "\"Erkaklar\" salati",
@@ -1083,7 +1083,7 @@
     {
       "id": "salted-cucumber",
       "cat": "salads",
-      "price": 4000,
+      "price": 5000,
       "image": "images/salted-cucumber.webp",
       "name": {
         "uz": "Tuzlangan bodring",
@@ -1159,7 +1159,7 @@
       "id": "mojito",
       "cat": "drinks",
       "group": "soda",
-      "price": 3500,
+      "price": 3000,
       "image": "images/mojito.webp",
       "icon": "🥤",
       "name": {
@@ -1233,47 +1233,28 @@
       "group": "soda"
     },
     {
-      "id": "cola-can",
+      "id": "coca-cola-1l",
       "cat": "drinks",
       "group": "soda",
-      "price": 1500,
-      "image": "images/cola-can.webp",
+      "price": 3500,
+      "icon": "🥤",
       "name": {
-        "uz": "Kola (banka)",
-        "en": "Cola (can)",
-        "ko": "콜라 (캔)",
-        "ru": "Кола (банка)"
+        "uz": "Coca-Cola 1 L",
+        "en": "Coca-Cola 1 L",
+        "ko": "코카콜라 1L",
+        "ru": "Coca-Cola 1 л"
       },
       "desc": {
-        "uz": "No Brand kola, 355 ml banka.",
-        "en": "No Brand cola, 355 ml can.",
-        "ko": "노브랜드 콜라 355ml 캔.",
-        "ru": "Кола No Brand, банка 355 мл."
-      }
-    },
-    {
-      "id": "cider",
-      "cat": "drinks",
-      "group": "soda",
-      "price": 1500,
-      "image": "images/cider.webp",
-      "name": {
-        "uz": "Chilsung Sayder (banka)",
-        "en": "Chilsung Cider (can)",
-        "ko": "칠성사이다 (캔)",
-        "ru": "Чильсон Сайдер (банка)"
-      },
-      "desc": {
-        "uz": "Limon-laymli tiniq gazli ichimlik, banka.",
-        "en": "Clear lemon-lime soda, can.",
-        "ko": "칠성사이다 캔.",
-        "ru": "Прозрачный лимонно-лаймовый лимонад, банка."
+        "uz": "Coca-Cola, 1 litrli shisha.",
+        "en": "Coca-Cola, 1-litre bottle.",
+        "ko": "코카콜라, 1리터 병.",
+        "ru": "Coca-Cola, бутылка 1 литр."
       }
     },
     {
       "id": "yogurt",
       "cat": "extras",
-      "price": 2000,
+      "price": 2200,
       "image": "images/yogurt.webp",
       "name": {
         "uz": "Qatiq (yogurt)",
@@ -1309,7 +1290,7 @@
     {
       "id": "big-bread",
       "cat": "extras",
-      "price": 3000,
+      "price": 4000,
       "image": "images/big-bread.webp",
       "name": {
         "uz": "Non (katta)",
@@ -1345,7 +1326,7 @@
     {
       "id": "aisha-set",
       "cat": "preorder",
-      "price": 67000,
+      "price": 69000,
       "image": "images/aisha-set.webp",
       "name": {
         "uz": "Aisha set — All Mix (5–6 kishilik)",
@@ -1365,7 +1346,7 @@
     {
       "id": "kazan-plov-lazer",
       "cat": "preorder",
-      "price": 98000,
+      "price": 100000,
       "image": "images/osh-tovoq.webp",
       "name": {
         "uz": "Buyurtma osh (lazer guruch)",
@@ -1378,25 +1359,6 @@
         "en": "1 kg of Lazer rice, served on a big platter for 8–10 people. Lamb, yellow carrots and quail eggs.",
         "ko": "라제르 쌀 1kg, 8–10인분 큰 접시. 양고기, 당근, 메추리알.",
         "ru": "1 кг риса лазер на большом блюде, на 8–10 человек. Баранина, жёлтая морковь, перепелиные яйца."
-      },
-      "ready": 120
-    },
-    {
-      "id": "kazan-plov-devzira",
-      "cat": "preorder",
-      "price": 103000,
-      "image": "images/osh-tovoq.webp",
-      "name": {
-        "uz": "Buyurtma osh (devzira guruch)",
-        "en": "Pre-order plov (Devzira rice)",
-        "ko": "주문 필라프 (데브지라 쌀)",
-        "ru": "Плов на заказ (рис девзира)"
-      },
-      "desc": {
-        "uz": "1 kg devzira guruchidan katta tovoqda osh — 8–10 kishilik. Qo'y go'shti, sariq sabzi, bedana tuxumi bilan.",
-        "en": "1 kg of Devzira rice, served on a big platter for 8–10 people. Lamb, yellow carrots and quail eggs.",
-        "ko": "데브지라 쌀 1kg, 8–10인분 큰 접시. 양고기, 당근, 메추리알.",
-        "ru": "1 кг риса девзира на большом блюде, на 8–10 человек. Баранина, жёлтая морковь, перепелиные яйца."
       },
       "ready": 120
     }
