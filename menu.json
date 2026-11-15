@@ -1377,6 +1377,7 @@
       "id": "ice-cream",
       "cat": "desserts",
       "price": 3000,
+      "image": "images/ice-cream.webp",
       "icon": "🍨",
       "name": {
         "uz": "Muzqaymoq (Ice Cream)",
