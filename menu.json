@@ -204,7 +204,7 @@
       "name": {
         "uz": "Achchiq go'sht",
         "en": "Achchiq go'sht — spicy beef",
-        "ko": "쇠고기 스트로가노프",
+        "ko": "매운 소고기 볶음",
         "ru": "Аччик гушт — острая говядина"
       },
       "desc": {
@@ -275,7 +275,7 @@
       "id": "chicken-leg",
       "cat": "main",
       "group": "national",
-      "price": 12000,
+      "price": 13000,
       "image": "images/chicken-leg.webp",
       "name": {
         "uz": "Tovuq oyoqchalari",
@@ -394,7 +394,7 @@
       "name": {
         "uz": "Qovurma lag'mon",
         "en": "Fried noodles",
-        "ko": "튀긴 라그만",
+        "ko": "볶음 라그만",
         "ru": "Жареный лагман"
       },
       "desc": {
@@ -522,7 +522,7 @@
       "id": "chicken-kebab",
       "cat": "main",
       "group": "kebab",
-      "price": 6500,
+      "price": 7000,
       "image": "images/chicken-kebab.webp",
       "name": {
         "uz": "Tovuq kabob",
@@ -541,7 +541,7 @@
       "id": "kabob-chapati",
       "cat": "main",
       "group": "kebab",
-      "price": 14000,
+      "price": 15000,
       "image": "images/kabob-chapati.webp",
       "name": {
         "uz": "Chapati kabob",
@@ -595,6 +595,25 @@
       }
     },
     {
+      "id": "tandir-somsa",
+      "cat": "main",
+      "group": "fastfood",
+      "price": 4000,
+      "icon": "🥟",
+      "name": {
+        "uz": "Tandir somsa",
+        "en": "Tandoor somsa",
+        "ko": "탄디르 사무사",
+        "ru": "Тандырная самса"
+      },
+      "desc": {
+        "uz": "Qatlama xamirdan, go'sht va piyoz to'ldirilgan tandir somsa.",
+        "en": "Flaky pastry filled with meat and onion, baked in a tandoor.",
+        "ko": "고기와 양파를 넣어 탄디르 화덕에 구운 겹겹 반죽 사무사.",
+        "ru": "Слоёная самса с мясом и луком, испечённая в тандыре."
+      }
+    },
+    {
       "id": "beef-burger",
       "cat": "main",
       "group": "fastfood",
@@ -636,7 +655,7 @@
       "id": "hot-dog",
       "cat": "main",
       "group": "fastfood",
-      "price": 6000,
+      "price": 7000,
       "image": "images/hot-dog.webp",
       "name": {
         "uz": "Hot-dog",
@@ -659,7 +678,7 @@
       "id": "hot-dog-big",
       "cat": "main",
       "group": "fastfood",
-      "price": 7000,
+      "price": 8000,
       "image": "images/hot-dog.webp",
       "name": {
         "uz": "Hot-dog katta (2 sosiska)",
@@ -682,7 +701,7 @@
       "id": "lavash-chicken",
       "cat": "main",
       "group": "fastfood",
-      "price": 8000,
+      "price": 9000,
       "image": "images/lavash-chicken.webp",
       "name": {
         "uz": "Lavash (tovuqli)",
@@ -701,7 +720,7 @@
       "id": "lavash-beef",
       "cat": "main",
       "group": "fastfood",
-      "price": 9000,
+      "price": 11000,
       "image": "images/lavash-beef.webp",
       "name": {
         "uz": "Lavash (mol go'shtli)",
@@ -720,7 +739,7 @@
       "id": "lavash-set-chicken",
       "cat": "main",
       "group": "fastfood",
-      "price": 11000,
+      "price": 13000,
       "image": "images/lavash-set-chicken.webp",
       "name": {
         "uz": "Lavash set (tovuq)",
@@ -739,7 +758,7 @@
       "id": "lavash-set-beef",
       "cat": "main",
       "group": "fastfood",
-      "price": 13000,
+      "price": 15000,
       "image": "images/lavash-set-beef.webp",
       "name": {
         "uz": "Lavash set (mol go'shti)",
@@ -824,24 +843,6 @@
         "en": "Small beef dumplings in a light tomato broth.",
         "ko": "소고기 소를 넣은 작은 만두를 토마토 국물에 끓임.",
         "ru": "Маленькие пельмени с говядиной в томатном бульоне."
-      }
-    },
-    {
-      "id": "pelmen",
-      "cat": "soups",
-      "price": 7000,
-      "image": "images/pelmen.webp",
-      "name": {
-        "uz": "Pelmen",
-        "en": "Pelmeni",
-        "ko": "펠메니",
-        "ru": "Пельмени"
-      },
-      "desc": {
-        "uz": "Go'shtli pelmenlar tiniq sho'rvada, ko'k piyoz bilan.",
-        "en": "Meat dumplings in clear broth with green onion.",
-        "ko": "고기 만두를 맑은 국물에, 파 곁들임.",
-        "ru": "Мясные пельмени в прозрачном бульоне с зелёным луком."
       }
     },
     {
@@ -955,7 +956,7 @@
     {
       "id": "man-salad",
       "cat": "salads",
-      "price": 6500,
+      "price": 7000,
       "image": "images/man-salad.webp",
       "name": {
         "uz": "\"Erkaklar\" salati",
@@ -991,7 +992,7 @@
     {
       "id": "carrot-salad",
       "cat": "salads",
-      "price": 4000,
+      "price": 5000,
       "image": "images/carrot-salad.webp",
       "name": {
         "uz": "Sabzi salati (koreyscha)",
@@ -1225,25 +1226,6 @@
       }
     },
     {
-      "id": "cola",
-      "cat": "drinks",
-      "price": 2200,
-      "image": "images/cola.webp",
-      "name": {
-        "uz": "Kola 1,5 L",
-        "en": "Cola 1.5 L",
-        "ko": "콜라 1.5L",
-        "ru": "Кола 1,5 л"
-      },
-      "desc": {
-        "uz": "No Brand kola, 1,5 litrli shisha.",
-        "en": "No Brand cola, 1.5 litre bottle.",
-        "ko": "노브랜드 콜라 1.5리터.",
-        "ru": "Кола No Brand, бутылка 1,5 л."
-      },
-      "group": "soda"
-    },
-    {
       "id": "coca-cola-1l",
       "cat": "drinks",
       "group": "soda",
@@ -1265,7 +1247,7 @@
     {
       "id": "yogurt",
       "cat": "extras",
-      "price": 2200,
+      "price": 2000,
       "image": "images/yogurt.webp",
       "name": {
         "uz": "Qatiq (yogurt)",
@@ -1301,7 +1283,7 @@
     {
       "id": "french-fries",
       "cat": "extras",
-      "price": 4000,
+      "price": 5000,
       "image": "images/french-fries.webp",
       "name": {
         "uz": "Kartoshka fri",
@@ -1405,11 +1387,6 @@
     }
   ],
   "credits": [
-    {
-      "for": "Pelmen",
-      "text": "Pelmeni2.jpg — Kagor, CC BY-SA 3.0",
-      "url": "https://commons.wikimedia.org/wiki/File:Pelmeni2.jpg"
-    },
     {
       "for": "Hot-dog",
       "text": "Хот-дог, Новосибирск 01.jpg — К.Артём.1, CC BY-SA 4.0",
