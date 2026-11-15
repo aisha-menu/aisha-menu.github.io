@@ -583,7 +583,7 @@
       "image": "images/somsa.webp",
       "name": {
         "uz": "Six somsa",
-        "en": "Skewer somsa",
+        "en": "Six Somsa",
         "ko": "꼬치 사무사",
         "ru": "Самса на шампуре"
       },
@@ -617,7 +617,7 @@
       "id": "beef-burger",
       "cat": "main",
       "group": "fastfood",
-      "price": 7000,
+      "price": 8000,
       "image": "images/beef-burger.webp",
       "name": {
         "uz": "Burger (mol go'shti)",
@@ -636,7 +636,7 @@
       "id": "burger-set",
       "cat": "main",
       "group": "fastfood",
-      "price": 9000,
+      "price": 11000,
       "image": "images/burger-set.webp",
       "name": {
         "uz": "Burger set",
