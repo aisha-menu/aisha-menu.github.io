@@ -152,11 +152,17 @@
     $("#f-credits").innerHTML = (data.credits || []).length ? `${t("photos")}: ` + data.credits
       .map((c) => `<a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.for)} — ${esc(c.text)}</a>`).join(" · ") : "";
 
-    $("#tabs-inner").innerHTML = data.categories
+    // a section whose dishes are all switched off by the chef disappears completely (tab too);
+    // a section that simply has no dishes yet still shows "coming soon"
+    const cats = data.categories.filter((c) => {
+      const all = data.items.filter((i) => i.cat === c.id && !i.hidden);
+      return !all.length || all.some((i) => !off.has(i.id));
+    });
+    $("#tabs-inner").innerHTML = cats
       .map((c) => `<a class="tab" href="#cat-${c.id}" data-cat="${c.id}"><span>${c.icon}</span>${esc(tx(c.name))}</a>`).join("")
       + `<a class="tab" href="#cat-videos" data-cat="videos"><span>🎬</span>${esc(t("videos"))}</a>`;
 
-    $("#menu").innerHTML = data.categories.map((c) => {
+    $("#menu").innerHTML = cats.map((c) => {
       const items = data.items.filter((i) => i.cat === c.id && !i.hidden && !off.has(i.id));
       let body;
       if (!items.length) body = soonHTML(c);
@@ -197,11 +203,14 @@
     }), { rootMargin: "-45% 0px -50% 0px" });
     document.querySelectorAll(".section").forEach((s) => secObs.observe(s));
     activeCat = null;
-    setActiveTab(data.categories[0].id);
+    const first = document.querySelector(".section");
+    if (first) setActiveTab(first.id.replace("cat-", ""));
   }
 
   /* ---------- cart ---------- */
   function change(id, delta) {
+    const it = itemById(id);
+    if (!it || it.hidden || (delta > 0 && off.has(id))) return;   // finished dishes can't be added
     const q = Math.max(0, (cart[id] || 0) + delta);
     if (q) cart[id] = q; else delete cart[id];
     store.set(CART_KEY, JSON.stringify(cart));
@@ -335,6 +344,15 @@
       else { lang = "uz"; render(); openLang(); }
       const target = location.hash && document.getElementById(location.hash.slice(1));
       if (target) (document.fonts ? document.fonts.ready : Promise.resolve()).then(() => target.scrollIntoView());
+      // pick up the chef's changes while the page stays open (every 2 min and when the guest comes back to the tab)
+      const recheck = () => fresh("status.json").then((st) => {
+        if (!Array.isArray(st.off)) return;
+        const next = new Set(st.off);
+        if (next.size === off.size && [...next].every((id) => off.has(id))) return;
+        off = next; render();
+      });
+      setInterval(() => { if (!document.hidden) recheck(); }, 120000);
+      document.addEventListener("visibilitychange", () => { if (!document.hidden) recheck(); });
     })
     .catch(() => { $("#menu").innerHTML = '<p style="text-align:center;padding:40px">menu.json could not be loaded.</p>'; });
 })();

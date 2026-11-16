@@ -52,7 +52,7 @@
     .sw::after { content: ""; position: absolute; top: 3px; left: 3px; width: 26px; height: 26px; border-radius: 50%; background: #fff; transition: transform .2s; }
     .dish:not(.off) .sw { background: #3fae5a; }
     .dish:not(.off) .sw::after { transform: translateX(22px); }
-    .state { font-size: 11px; font-weight: 800; width: 52px; text-align: center; flex: none; }
+    .state { font-size: 11px; font-weight: 800; width: 58px; text-align: center; flex: none; }
     .dish:not(.off) .state { color: #6fd38a; }
     .dish.off .state { color: #ff9b8a; }
     .vid { display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 14px; background: var(--card); border: 1px solid var(--line); margin-bottom: 8px; }
@@ -113,7 +113,7 @@
 
       <div id="tab-dishes">
         <p class="summary" id="summary"></p>
-        <p class="summary">Taomni bosing: <b style="color:#6fd38a">BOR</b> ↔ <b style="color:#ff9b8a">YO'Q</b>. "Yo'q" taomlar mijozlarga ko'rinmaydi. O'zgarish saytda 1–2 daqiqada chiqadi.</p>
+        <p class="summary">Taomni bosing: <b style="color:#6fd38a">BOR</b> ↔ <b style="color:#ff9b8a">TUGADI</b>. Tugagan taomlar mijozlarga umuman ko'rinmaydi (bo'limdagi hammasi tugasa, bo'lim ham yashirinadi). O'zgarish saytda 1–2 daqiqada chiqadi.</p>
         <input class="search" id="search" type="search" placeholder="🔍 Qidirish…">
         <div id="dishes"></div>
       </div>
@@ -269,7 +269,7 @@
       const q = $("#search").value.trim().toLowerCase();
       const items = menu.items.filter((i) => !i.hidden);
       const offCount = items.filter((i) => off.has(i.id)).length;
-      $("#summary").innerHTML = offCount ? `Hozir <b>${offCount} ta</b> taom o'chirilgan (mijozlarga ko'rinmaydi).` : "Hamma taomlar yoqilgan.";
+      $("#summary").innerHTML = offCount ? `Hozir <b>${offCount} ta</b> taom tugagan deb belgilangan (mijozlarga ko'rinmaydi).` : "Hamma taomlar yoqilgan.";
       $("#dishes").innerHTML = menu.categories.map((c) => {
         const list = items.filter((i) => i.cat === c.id && (!q || [i.name.uz, i.name.ko, i.name.en, i.name.ru].join(" ").toLowerCase().includes(q)));
         if (!list.length) return "";
@@ -278,7 +278,7 @@
           return `<div class="dish${off.has(i.id) ? " off" : ""}" data-id="${esc(i.id)}" role="switch" aria-checked="${!off.has(i.id)}" tabindex="0">
             ${pic ? `<img src="${esc(pic)}" alt="" loading="lazy">` : `<div class="noimg">🍽️</div>`}
             <div class="nm"><b>${esc(i.name.uz)}</b><span>${esc(i.name.ko)} · ${i.price.toLocaleString("en-US")}원</span></div>
-            <span class="state">${off.has(i.id) ? "YO'Q" : "BOR"}</span><span class="sw"></span></div>`;
+            <span class="state">${off.has(i.id) ? "TUGADI" : "BOR"}</span><span class="sw"></span></div>`;
         }).join("");
       }).join("") || `<p class="summary">Hech narsa topilmadi.</p>`;
     }
