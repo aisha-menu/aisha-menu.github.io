@@ -599,6 +599,7 @@
       "cat": "main",
       "group": "fastfood",
       "price": 4000,
+      "image": "images/tandir-somsa.webp",
       "icon": "🥟",
       "name": {
         "uz": "Tandir somsa",
@@ -1065,6 +1066,7 @@
       "id": "pinchuza",
       "cat": "salads",
       "price": 4000,
+      "image": "images/pinchuza.webp",
       "name": {
         "uz": "Pinchuza",
         "en": "Pinchuza",
@@ -1077,6 +1079,7 @@
       "cat": "drinks",
       "group": "hot",
       "price": 1000,
+      "image": "images/tea.webp",
       "icon": "🍵",
       "name": {
         "uz": "Choy",
@@ -1134,6 +1137,7 @@
       "cat": "drinks",
       "group": "hot",
       "price": 4000,
+      "image": "images/tea.webp",
       "icon": "🍹",
       "name": {
         "uz": "Mevali choy",
@@ -1230,6 +1234,7 @@
       "cat": "drinks",
       "group": "soda",
       "price": 3500,
+      "image": "images/coca-cola-1l.webp",
       "icon": "🥤",
       "name": {
         "uz": "Coca-Cola 1 L",
@@ -1266,6 +1271,7 @@
       "id": "suzma",
       "cat": "extras",
       "price": 4000,
+      "image": "images/suzma.webp",
       "icon": "🥣",
       "name": {
         "uz": "Suzma",
