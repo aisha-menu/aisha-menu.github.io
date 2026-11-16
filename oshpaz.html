@@ -73,11 +73,10 @@
   <header class="top"><div class="wrap">
     <h1>👨‍🍳 Oshpaz paneli</h1>
     <a class="btn" href="./" target="_blank">Menyu ↗</a>
-    <button class="btn" id="lock" hidden>🔒</button>
   </div></header>
 
   <main class="wrap">
-    <!-- 1) first time on this phone: GitHub key + PIN -->
+    <!-- 1) first time on this phone: GitHub key only -->
     <section class="panel" id="setup" hidden>
       <h2>Birinchi sozlash</h2>
       <p>Bu sozlash shu telefonda bir marta qilinadi. Kerakli narsa — saytga yozish huquqi bor GitHub kaliti (token):</p>
@@ -90,21 +89,19 @@
       </ol>
       <label for="token">GitHub kaliti</label>
       <input id="token" type="password" autocomplete="off" placeholder="github_pat_…">
-      <label for="pin1">Yangi PIN-kod (kamida 4 raqam)</label>
-      <input id="pin1" class="pin" type="password" inputmode="numeric" autocomplete="new-password" maxlength="8">
-      <label for="pin2">PIN-kodni takrorlang</label>
-      <input id="pin2" class="pin" type="password" inputmode="numeric" autocomplete="new-password" maxlength="8">
+      <p>Kalit faqat shu telefonda saqlanadi va faqat GitHub'ga (saytga yozish uchun) ishlatiladi.</p>
       <p class="err" id="setup-err"></p>
       <div class="row-btns"><button class="btn gold" id="setup-save">Saqlash</button></div>
     </section>
 
-    <!-- 2) every visit: PIN -->
+    <!-- 2) one time only, for a phone set up with the old PIN version: unlock the saved key, then PIN is gone for good -->
     <section class="panel" id="login" hidden>
-      <h2>PIN-kodni kiriting</h2>
+      <h2>Bir martalik yangilanish</h2>
+      <p>Panel endi PIN so'ramaydi. Saqlangan kalitni ochish uchun eski PIN-kodni <b>oxirgi marta</b> kiriting — kalitni qayta kiritish shart emas.</p>
       <input id="pin" class="pin" type="password" inputmode="numeric" autocomplete="current-password" maxlength="8" autofocus>
       <p class="err" id="login-err"></p>
-      <div class="row-btns"><button class="btn gold" id="login-go">Kirish</button></div>
-      <div class="row-btns"><button class="btn danger" id="reset">PIN esdan chiqdi — qaytadan sozlash</button></div>
+      <div class="row-btns"><button class="btn gold" id="login-go">Davom etish</button></div>
+      <div class="row-btns"><button class="btn danger" id="reset">PIN esdan chiqdi — kalitni qaytadan kiritish</button></div>
     </section>
 
     <!-- 3) the panel -->
@@ -131,6 +128,7 @@
         </div>
         <div id="videos"></div>
       </div>
+      <div class="row-btns" style="margin-top:28px"><button class="btn danger" id="reset-app" hidden>Qaytadan sozlash (kalitni o'chirish)</button></div>
     </section>
   </main>
 
@@ -140,27 +138,24 @@
   (function () {
     "use strict";
     const REPO = "aisha-menu/aisha-menu.github.io", BRANCH = "main";
-    const KEY = "aisha_chef_key";   // GitHub token, encrypted with the PIN (AES-GCM, key from PBKDF2)
+    const KEY = "aisha_chef_token";      // GitHub token, kept only in this phone's browser storage
+    const OLD_KEY = "aisha_chef_key";    // older version: token encrypted with a PIN (read once, then removed)
     const $ = (s) => document.querySelector(s);
     const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
     const store = {
-      get() { try { return JSON.parse(localStorage.getItem(KEY)); } catch (e) { return null; } },
-      set(v) { try { localStorage.setItem(KEY, JSON.stringify(v)); return true; } catch (e) { return false; } },
-      del() { try { localStorage.removeItem(KEY); } catch (e) { /* ignore */ } }
+      get() { try { return localStorage.getItem(KEY); } catch (e) { return null; } },
+      set(v) { try { localStorage.setItem(KEY, v); return localStorage.getItem(KEY) === v; } catch (e) { return false; } },
+      old() { try { return JSON.parse(localStorage.getItem(OLD_KEY)); } catch (e) { return null; } },
+      del() { try { localStorage.removeItem(KEY); localStorage.removeItem(OLD_KEY); } catch (e) { /* ignore */ } }
     };
 
-    /* ---------- PIN-encrypted token ---------- */
+    /* ---------- old PIN-encrypted token (only to carry it over once) ---------- */
     const enc = new TextEncoder(), dec = new TextDecoder();
     const b64 = (buf) => btoa(String.fromCharCode(...new Uint8Array(buf)));
     const unb64 = (s) => Uint8Array.from(atob(s), (c) => c.charCodeAt(0));
     async function keyFrom(pin, salt) {
       const base = await crypto.subtle.importKey("raw", enc.encode(pin), "PBKDF2", false, ["deriveKey"]);
       return crypto.subtle.deriveKey({ name: "PBKDF2", salt, iterations: 250000, hash: "SHA-256" }, base, { name: "AES-GCM", length: 256 }, false, ["encrypt", "decrypt"]);
-    }
-    async function seal(token, pin) {
-      const salt = crypto.getRandomValues(new Uint8Array(16)), iv = crypto.getRandomValues(new Uint8Array(12));
-      const ct = await crypto.subtle.encrypt({ name: "AES-GCM", iv }, await keyFrom(pin, salt), enc.encode(token));
-      return { salt: b64(salt), iv: b64(iv), ct: b64(ct) };
     }
     async function unseal(box, pin) {
       const pt = await crypto.subtle.decrypt({ name: "AES-GCM", iv: unb64(box.iv) }, await keyFrom(pin, unb64(box.salt)), unb64(box.ct));
@@ -210,14 +205,12 @@
     }
 
     /* ---------- screens ---------- */
-    function show(id) { ["setup", "login", "app"].forEach((s) => { $("#" + s).hidden = s !== id; }); $("#lock").hidden = id !== "app"; }
+    function show(id) { ["setup", "login", "app"].forEach((s) => { $("#" + s).hidden = s !== id; }); $("#reset-app").hidden = id !== "app"; }
 
     $("#setup-save").addEventListener("click", async () => {
-      const t = $("#token").value.trim(), p1 = $("#pin1").value, p2 = $("#pin2").value, err = $("#setup-err");
+      const t = $("#token").value.trim(), err = $("#setup-err");
       err.textContent = "";
       if (!t) return (err.textContent = "Kalitni kiriting.");
-      if (!/^\d{4,8}$/.test(p1)) return (err.textContent = "PIN 4–8 ta raqamdan iborat bo'lsin.");
-      if (p1 !== p2) return (err.textContent = "PIN-kodlar bir xil emas.");
       $("#setup-save").disabled = true; err.textContent = "Tekshirilmoqda…";
       token = t;
       try {
@@ -225,8 +218,9 @@
         if (!r.ok) throw Object.assign(new Error(), { status: r.status });
         const repo = await r.json();
         if (!repo.permissions || !repo.permissions.push) throw Object.assign(new Error(), { status: 403 });
-        if (!store.set(await seal(t, p1))) throw new Error("storage");
-        err.textContent = ""; start();
+        if (!store.set(t)) throw new Error("storage");
+        try { localStorage.removeItem(OLD_KEY); } catch (e) { /* ignore */ }
+        $("#token").value = ""; err.textContent = ""; start();
       } catch (e) { token = null; err.textContent = e.message === "storage" ? "Brauzer xotirasiga yozib bo'lmadi (yashirin rejimdan chiqing)." : explain(e); }
       $("#setup-save").disabled = false;
     });
@@ -234,13 +228,19 @@
     async function login() {
       const err = $("#login-err");
       err.textContent = "";
-      try { token = await unseal(store.get(), $("#pin").value); start(); }
+      try {
+        token = await unseal(store.old(), $("#pin").value);
+        if (!store.set(token)) throw new Error("storage");
+        try { localStorage.removeItem(OLD_KEY); } catch (e) { /* ignore */ }
+        $("#pin").value = ""; start();
+      }
       catch (e) { err.textContent = "PIN noto'g'ri."; $("#pin").select(); }
     }
     $("#login-go").addEventListener("click", login);
     $("#pin").addEventListener("keydown", (e) => { if (e.key === "Enter") login(); });
-    $("#reset").addEventListener("click", () => { if (confirm("Saqlangan kalit o'chiriladi va qaytadan sozlaysiz. Davom etamizmi?")) { store.del(); show("setup"); } });
-    $("#lock").addEventListener("click", () => { token = null; $("#pin").value = ""; show("login"); });
+    function resetKey() { if (confirm("Saqlangan kalit shu telefondan o'chiriladi va uni qaytadan kiritasiz. Davom etamizmi?")) { store.del(); token = null; show("setup"); } }
+    $("#reset").addEventListener("click", resetKey);
+    $("#reset-app").addEventListener("click", resetKey);
 
     document.querySelectorAll("[data-tab]").forEach((b) => b.addEventListener("click", () => {
       document.querySelectorAll("[data-tab]").forEach((x) => x.classList.toggle("on", x === b));
@@ -371,7 +371,8 @@
 
     /* ---------- boot ---------- */
     if (!window.crypto || !crypto.subtle) { show("setup"); $("#setup-err").textContent = "Bu brauzer juda eski. Chrome yoki Safari'ning yangi versiyasini oching."; $("#setup-save").disabled = true; }
-    else show(store.get() ? "login" : "setup");
+    else if (store.get()) { token = store.get(); start(); }
+    else show(store.old() ? "login" : "setup");
   })();
   </script>
 </body>
